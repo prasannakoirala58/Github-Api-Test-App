@@ -4,7 +4,7 @@ var router = express.Router();
 const axios = require('axios');
 
 // get details of a sepcific repo
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
   const { owner, repo } = req.params;
   console.log(owner, repo);
 
