@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-image: linear-gradient(rgb(33, 147, 176, 0.8), rgb(109, 213, 237, 0.6)),
+    url(./img/background.jpg);
+}
+
+.title {
+  color: azure;
+  text-align: center;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5%;
+  /* background: url('./img/background.jpg') no-repeat center center/cover; */
+  /* background-image: linear-gradient(rgba(0, 8, 51, 0.9), rgba(0, 8, 51, 0.9)); */
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  display: flex;
+  padding: 5px 10px;
+  align-items: center;
+  backdrop-filter: blur(10px) saturate(180%);
+}
+
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 12px 6px;
+  font-size: 16px;
+  color: aliceblue;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+.search-bar button .image {
+  width: 25px;
+  color: white;
+}
+
+.search-bar button {
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 50%;
+  outline: none;
+  background: #58629b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: #4154bc;
+}
