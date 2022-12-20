@@ -12,7 +12,13 @@ body {
     url(./img/background.jpg);
 }
 
-.title {
+.heading-1 {
+  color: azure;
+  text-align: center;
+  padding: 2rem;
+}
+
+.heading-4 {
   color: azure;
   text-align: center;
   padding: 2rem;
@@ -76,4 +82,13 @@ body {
 
 .search-bar button:hover {
   background: #4154bc;
+}
+
+.repo-list {
+  width: 100%;
+  max-width: 700px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
 }

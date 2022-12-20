@@ -13,7 +13,7 @@ function App() {
   const [sortFilter, setSortFilter] = useState('');
 
   const getRepos = async () => {
-    console.log('get repos chalyo hai bhai log');
+    console.log('get repos chalyo ');
     const config = {
       headers: {
         'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function App() {
 
     try {
       const res = await axios.post('api/repos', body, config);
-      console.log(res);
+      console.log(res.repos);
       setRepos(res.data.repos);
       console.log('run bhayo la bhai go');
     } catch (err) {
@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>GitHub API Data</h1>
+      <h1 className="heading-1">GitHub API Data</h1>
       <div className="container">
         <form className="search-bar" action="">
           <input
@@ -53,8 +53,10 @@ function App() {
         {console.log(repos)}
         {repos && repos.length > 0 ? (
           <Fragment>
-            <h4>The repositories for this user are:</h4>
-            <RepoList repos={repos} />
+            <div className="repo-list">
+              <h4 className="heading-4">The repositories for this user are:</h4>
+              <RepoList repos={repos} />
+            </div>
           </Fragment>
         ) : (
           <h4>No repositories found for searched user.</h4>
