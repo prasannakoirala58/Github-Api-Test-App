@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const GitHub = require('github-api');
+// const GitHub = require('github-api');
 const axios = require('axios');
 
 router.post('/', async (req, res, next) => {
@@ -55,29 +55,29 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-// router.get('/', async (req, res, next) => {
-//   try {
-//     const gh = new GitHub({});
+// get readme details of a repo
+router.get('/readme/:owner/:repo', (req, res) => {
+  const { owner, repo } = req.params;
 
-//     const username = req.body.username;
-//     const user = gh.getUser(username);
-//     const repos = await user.listRepos();
-//     const data = repos.data;
-//     console.log(repos);
-//     res.status(200).json({
-//       status: 'success',
-//       user,
-//       data,
-//       msg: 'Data fetched successfully',
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(400).json({
-//       status: 'fail',
-//       error: err,
-//       msg: 'Data not fetched successfully',
-//     });
-//   }
-// });
+  axios
+    .get(`https://api.github.com/repos/${owner}/${repo}/readme`)
+    .then((response) => {
+      const readmeUrl = response.data.download_url;
+
+      axios
+        .get(readmeUrl)
+        .then((response) => {
+          res.send(response.data);
+        })
+        .catch((error) => {
+          console.error(error);
+          res.sendStatus(500);
+        });
+    })
+    .catch((error) => {
+      console.error(error);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;

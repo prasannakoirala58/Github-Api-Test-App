@@ -17,9 +17,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-body {
+/* body {
   background-image: linear-gradient(rgb(33, 147, 176, 0.8), rgb(109, 213, 237, 0.6)),
     url(./img/background.jpg);
+} */
+
+body {
+  background-color: darkcyan;
 }
 
 .heading-1 {
@@ -35,9 +39,12 @@ body {
   display: block;
 }
 
+.App {
+  align-items: center;
+}
+
 .container {
   width: 100%;
-  min-height: 100vh;
   padding: 5%;
   /* background: url('./img/background.jpg') no-repeat center center/cover; */
   /* background-image: linear-gradient(rgba(0, 8, 51, 0.9), rgba(0, 8, 51, 0.9)); */
@@ -97,11 +104,11 @@ body {
 
 .repo-list {
   width: 100%;
-  max-width: 700px;
+  max-width: 95vw;
   margin-top: 20px;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .select__sort {
@@ -115,4 +122,23 @@ body {
 
   padding: 1rem;
   background: transparent;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container-2 {
+  padding: 2px 16px;
 }

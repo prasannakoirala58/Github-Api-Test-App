@@ -9,6 +9,7 @@ const cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const reposRouter = require('./routes/repos');
+const repoRouter = require('./routes/repo');
 
 var app = express();
 app.use(helmet());
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Mounting Routes
 app.use('/api/', indexRouter);
+app.use('api/repoDetails', repoRouter);
 app.use('/api/repos', reposRouter);
 app.use('/api/user', usersRouter);
 
