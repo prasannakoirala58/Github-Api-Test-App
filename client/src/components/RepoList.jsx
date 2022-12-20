@@ -10,6 +10,7 @@ const RepoList = ({ repos }) => {
   return (
     <div>
       <h4>The repositories for this user are: {selectedRepo}</h4>
+      {console.log(repos)}
       <ul>
         {repos &&
           repos.map((repo) => (

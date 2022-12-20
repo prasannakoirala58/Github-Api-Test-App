@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+:root {
+  --button-background: dodgerblue;
+  --button-color: white;
+
+  --dropdown-highlight: dodgerblue;
+  --dropdown-width: 160px;
+  --dropdown-background: white;
+  --dropdown-color: black;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +32,7 @@ body {
   color: azure;
   text-align: center;
   padding: 2rem;
+  display: block;
 }
 
 .container {
@@ -88,7 +99,20 @@ body {
   width: 100%;
   max-width: 700px;
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.select__sort {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0;
+
+  padding: 1rem;
+  background: transparent;
 }
